@@ -20,7 +20,7 @@ void recup_donnees(std::string nom_fichier, tableau & T, int & taille) { // Cré
     int indice_ligne, indice_colonne, valeur;
     for (int i = 0; i < nb_lignes; ++i) {
       fichier_texte >> indice_ligne >> indice_colonne >> valeur;
-      T[indice_ligne][indice_colonne] = valeur;
+      T[indice_ligne - 1][indice_colonne - 1] = valeur;
     }
   }
 }
@@ -39,4 +39,4 @@ int somme_tableau(tableau & T, int taille, ligne & M); // Somme de toutes les va
 
 void renvoi_resultat(std::string nom_fichier, ligne & masque, int score); // Création du fichier qui contient le masque et le score
 
-void coeur_programme(std::string & fic_import, std::string & fic_export = "resultats.txt", tableau & T, ligne & M, int & taille); // Gestion du programme
+void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, int & taille); // Gestion du programme
