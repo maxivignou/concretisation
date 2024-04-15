@@ -24,4 +24,4 @@ int somme_tableau(tableau & T, int taille, ligne & M); // Somme de toutes les va
 
 void renvoi_resultat(std::string nom_fichier, ligne & masque, int score); // Création du fichier qui contient le masque et le score
 
-void coeur_programme(std::string & fic_import, std::string & fic_export = "resultats.txt", tableau & T, ligne & M, int & taille); // Gestion du programme
+void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, int & taille); // Gestion du programme
