@@ -2,7 +2,20 @@
 
 void init_tableau(tableau & T, int taille); // Initialisation du tableau avec des valeurs nulles
 
-void recup_donnees(std::string nom_fichier, tableau & T, int & taille); // Création de la matrice carrée avec les données du fichier
+void recup_donnees(std::string nom_fichier, tableau & T, int & taille) { // Création de la matrice carrée avec les données du fichier
+  std::ifstream fichier_texte;
+  fichier_texte.open(nom_fichier);
+  if (fichier_texte.is_open()) {
+    int nb_lignes;
+    fichier_texte >> taille >> nb_lignes;
+    init_tableau(T, taille);
+    int indice_ligne, indice_colonne, valeur;
+    for (int i = 0; i < nb_lignes; ++i) {
+      fichier_texte >> indice_ligne >> indice_colonne >> valeur;
+      T[indice_ligne][indice_colonne] = valeur;
+    }
+  }
+}
 
 int somme_colonne_ligne(tableau & T, int taille, int no_somme); // Somme des valeurs dans la no_somme ligne et la no_somme colonne
 
