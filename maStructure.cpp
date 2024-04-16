@@ -36,7 +36,7 @@ int somme_colonne_ligne(tableau & T, int taille, int no_somme) { // Somme des va
 
 void creation_toutes_sommes(tableau & T, int taille, ligne & L_S) { // Création de la liste contenant toutes les sommes
     L_S = new int[taille];
-    for (int i = 0 i < taille; i++) {
+    for (int i = 0; i < taille; i++) {
         L_S[i] = somme_colonne_ligne(T,taille,i);
     }
 }
