@@ -2,7 +2,7 @@
 #include "maStructure.cpp"
 
 int main() {
-  std::string nom_depart,nom_fin;
+  std::string nom_depart = "bdd.txt",nom_fin = "resultat.txt";
   tableau T;
   ligne M;
   int taille;
