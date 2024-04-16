@@ -33,7 +33,13 @@ int indice_min(ligne & L, int taille); // Récupération de l'indice minimal de 
 
 void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int no_modification); // Modifications de toutes les données lorsqu'on appliquera un nouveau masque
 
-void application_masque(tableau & T, int taille, ligne & L_S, ligne & M); // Création masque total en modifiant les données
+void application_masque(tableau & T, int taille, ligne & L_S, ligne & M) { // Création masque total en modifiant les données
+    int mini = indice_min(L_S, taille);
+    while (L_S[mini] < 0) {
+        modifications_donnees(T, taille, L_S, M, mini);
+        mini = indice_min(L_S, taille);
+    }
+}
 
 int somme_tableau(tableau & T, int taille, ligne & M) { // Somme de toutes les valeurs du tableau
     int Somme = 0;
