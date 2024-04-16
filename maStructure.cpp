@@ -55,7 +55,11 @@ void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int 
     M[no_modification] = 0;
     for (int i = 0; i < taille; ++i) {
         L_S[i] -= T[i][no_modification];
-        L_S[i] -= T[no_modification][i];
+        if (no_modification != i) {
+            L_S[i] -= T[no_modification][i];
+            L_S[no_modification] -= T[i][no_modification];
+            L_S[no_modification] -= T[no_modification][i];
+        }
         T[i][no_modification] = 0;
         T[no_modification][i] = 0;
     }
