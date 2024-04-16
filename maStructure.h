@@ -22,6 +22,6 @@ void application_masque(tableau & T, int taille, ligne & L_S, ligne & M); // Cr�
 
 int somme_tableau(tableau & T, int taille, ligne & M); // Somme de toutes les valeurs du tableau
 
-void renvoi_resultat(std::string nom_fichier, ligne & masque, int score); // Création du fichier qui contient le masque et le score
+void renvoi_resultat(std::string nom_fichier, ligne & masque, int score, int taille); // Création du fichier qui contient le masque et le score
 
 void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, int & taille); // Gestion du programme
