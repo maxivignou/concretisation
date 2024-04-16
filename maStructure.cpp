@@ -35,7 +35,17 @@ void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int 
 
 void application_masque(tableau & T, int taille, ligne & L_S, ligne & M); // Création masque total en modifiant les données
 
-int somme_tableau(tableau & T, int taille, ligne & M); // Somme de toutes les valeurs du tableau
+int somme_tableau(tableau & T, int taille, ligne & M) { // Somme de toutes les valeurs du tableau
+    int Somme = 0;
+    for (int i = 0; i < taille; i++) {
+        if (M[i] == 1) {
+            for (int j = 0; j < taille; j++) {
+                Somme += T[i][j];
+            }
+        }
+    }
+    return Somme;
+}
 
 void renvoi_resultat(std::string nom_fichier, ligne & masque, int score, int taille) { // Création du fichier qui contient le masque et le score
     std::ofstream fichier_texte;
