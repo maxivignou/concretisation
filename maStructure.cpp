@@ -96,4 +96,17 @@ void renvoi_resultat(std::string nom_fichier, ligne & masque, int score, int tai
     }
 }
 
-void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, int & taille); // Gestion du programme
+void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, int & taille) { // Gestion du programme
+    recup_donnees(fic_import,T,taille);
+    ligne L_S;
+    creation_toutes_sommes(T,taille,L_S);
+    application_masque(T,taille,L_S,M);
+    int S_T = somme_tableau(T,taille,M);
+    renvoi_resultat(fic_export,M,S_T,taille);
+    for (int i = 0; i < taille; i++) {
+        delete[] T[i];
+    }
+    delete[] T;
+    delete[] M;
+    delete[] L_S;
+}
