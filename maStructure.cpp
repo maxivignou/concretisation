@@ -49,6 +49,10 @@ void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int 
 }
 
 void application_masque(tableau & T, int taille, ligne & L_S, ligne & M) { // Création masque total en modifiant les données
+    M = new int[taille];
+    for (int i = 0; i < taille; ++i) {
+        M[i] = 1;
+    }
     int mini = indice_min(L_S, taille);
     while (L_S[mini] < 0) {
         modifications_donnees(T, taille, L_S, M, mini);
