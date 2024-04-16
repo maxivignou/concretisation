@@ -1,5 +1,4 @@
 #include "maStructure.h"
-#include "maStructure.cpp"
 
 int main() {
   std::string nom_depart = "bdd.txt",nom_fin = "resultat.txt";
