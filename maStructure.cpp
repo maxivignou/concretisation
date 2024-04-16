@@ -34,7 +34,12 @@ int somme_colonne_ligne(tableau & T, int taille, int no_somme) { // Somme des va
     return Somme;
 }
 
-void creation_toutes_sommes(tableau & T, int taille, ligne & L_S); // Création de la liste contenant toutes les sommes
+void creation_toutes_sommes(tableau & T, int taille, ligne & L_S) { // Création de la liste contenant toutes les sommes
+    L_S = new int[taille];
+    for (int i = 0 i < taille; i++) {
+        L_S[i] = somme_colonne_ligne(T,taille,i);
+    }
+}
 
 int indice_min(ligne & L, int taille); // Récupération de l'indice minimal de la liste
 
