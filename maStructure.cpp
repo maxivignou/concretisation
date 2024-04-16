@@ -41,7 +41,15 @@ void creation_toutes_sommes(tableau & T, int taille, ligne & L_S) { // Création
     }
 }
 
-int indice_min(ligne & L, int taille); // Récupération de l'indice minimal de la liste
+int indice_min(ligne & L, int taille) { // Récupération de l'indice minimal de la liste
+    int i_min = 0;
+    for (int i = 1; i < taille; i++) {
+        if (L[i] < L[i_min]) {
+            i_min = i;
+        }
+    }
+    return i_min;
+}
 
 void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int no_modification) { // Modifications de toutes les données lorsqu'on appliquera un nouveau masque
     M[no_modification] = 0;
