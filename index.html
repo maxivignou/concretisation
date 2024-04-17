@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+    <html dir="ltr" lang="fr-FR">
+        <head>
+            <meta utf="utf-8">
+            <meta name="auteurs" content="Matthieu/Fabien"/>
+            <link rel ="stylesheet" type="text/css" href="style.css"/>
+            <script src="javascript.js"></script>
+            <title>Concrétisation (Grille Masquée)</title>
+        </head>
+        
+        <body>
+            <header>
+                <!--Grille cachée et pas cachée-->
+                <h1>La Grille Masquée</h1>
+            </header>
+            
+            
+            <nav>
+                <ul>
+                    <li class="deroulant">
+                        <a href="">Accueil</a>
+                        <ul class="sous">
+                            <li><a href="#presentation">Présentation du problème</a></li>
+                            <li><a href="#exemple">Quelques exemples</a></li>
+                        </ul>
+                    </li> 
+                    <li><a href="">Téléchargements</a></li>
+                    <li class="deroulant">
+                        <a href="">Simulations</a>
+                        <ul class="sous">
+                            <li><a href="">Mesurez-vous à l'ordinateur !</a></li>
+                            <li><a href="">Testez vos grilles !</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            <main> 
+                <section id="presentation">
+                    <h2>Le jeu de la Grille Masquée</h2>
+                    <p>L'objectif, c'est de masquer des cases d'une grille carrée, pour que la somme des cases visibles soit la plus grande possible.</p>
+                    <p>La subtilité, c'est qu'on doit masquer non pas case par case, mais ligne par ligne. Pour compliquer l'affaire, parce que ce serait trop facile, si on masque la ligne 3, on doit aussi masquer la colonne 3, si on masque la ligne 16, on doit aussi masquer la colonne 16.</p>
+                    <p>On en retire alors un masque, avec un 0 pour une ligne cachée et un 1 pour une ligne découverte.</p>
+                </section>
+                    
+                <section id="exemple">
+                    <h2>Un exemple</h2>
+                    <p>Trève de blabla, on comprend toujours mieux avec un exemple :</p>
+                    <article class="tableaux">
+                        <table>
+                            <caption>Tableau d'origine</caption>
+                            <tr>
+                                <td>3</td>
+                                <td>6</td>
+                                <td>8</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>-9</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>-3</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>-8</td>
+                                <td>6</td>
+                                <td>-9</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>-1</td>
+                                <td>-6</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                        
+                        <table>
+                            <caption>Résultat : 18</caption>
+                            <tr>
+                                <td>3</td>
+                                <td class="cache">6</td>
+                                <td>8</td>
+                                <td class="cache">0</td>
+                            </tr>
+                            <tr class="cache">
+                                <td>-9</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>-3</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="cache">-8</td>
+                                <td>6</td>
+                                <td class="cache">-9</td>
+                            </tr>
+                            <tr class="cache">
+                                <td>1</td>
+                                <td>-1</td>
+                                <td>-6</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </article>
+                </section>
+            </main>
+            
+            <footer>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>c</p>
+            </footer>
+        </body>
+    </html>
+    
