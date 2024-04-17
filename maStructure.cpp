@@ -82,7 +82,9 @@ int somme_tableau(tableau & T, int taille, ligne & M) { // Somme de toutes les v
     for (int i = 0; i < taille; i++) {
         if (M[i] == 1) {
             for (int j = 0; j < taille; j++) {
-                Somme += T[i][j];
+                if (M[j] == 1) {
+                    Somme += T[i][j];
+                }
             }
         }
     }
