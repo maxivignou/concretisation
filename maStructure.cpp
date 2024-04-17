@@ -41,10 +41,10 @@ void creation_toutes_sommes(tableau & T, int taille, ligne & L_S) { // Création
     }
 }
 
-int indice_min(ligne & L, int taille) { // Récupération de l'indice minimal de la liste
+int indice_min(ligne & L, int taille, ligne & M) { // Récupération de l'indice minimal de la liste
     int i_min = 0;
     for (int i = 1; i < taille; i++) {
-        if (L[i] < L[i_min]) {
+        if (L[i] < L[i_min] and M[i] != 2) {
             i_min = i;
         }
     }
@@ -63,16 +63,41 @@ void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int 
     }
 }
 
-void application_masque(tableau & T, int taille, ligne & L_S, ligne & M) { // Création masque total en modifiant les données
-    M = new int[taille];
-    for (int i = 0; i < taille; ++i) {
-        M[i] = 1;
+void application_masque(tableau & T, int taille, ligne & L_S, ligne & M, int & score) { // Création masque total en modifiant les données
+    int mini = indice_min(L_S, taille, M);
+    if (L_S[mini] >= 0) {
+        score = somme_tableau(T, taille, M);
+    } else {
+        int score_1, score_2;
+        ligne M1, M2;
+        M1 = new int[taille];
+        M2 = new int[taille];
+        for (int i = 0; i < taille; ++i) {
+            if (M[i] != 2) {
+                M1[i] = M[i];
+                M2[i] = M[i];
+            } else {
+                M1[i] = 1;
+                M2[i] = 1;
+            }
+        }
+        M2[mini] = 2;
+        modification_donnees(T, taille, L_S, M1, mini);
+        application_masque(T, taille, L_S, M1, score_1);
+        application_masque(T, taille, L_S, M2, score_2);
+        if (score_1 > score_2) {
+            M = M1;
+            score = score_1;
+        } else {
+            M = M2;
+            score = score_2;
     }
-    int mini = indice_min(L_S, taille);
+    /*
     while (L_S[mini] < 0) {
         modifications_donnees(T, taille, L_S, M, mini);
         mini = indice_min(L_S, taille);
     }
+    */
 }
 
 int somme_tableau(tableau & T, int taille, ligne & M) { // Somme de toutes les valeurs du tableau
