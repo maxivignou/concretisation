@@ -60,8 +60,6 @@ void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int 
             L_S[no_modification] -= T[i][no_modification];
             L_S[no_modification] -= T[no_modification][i];
         }
-        T[i][no_modification] = 0;
-        T[no_modification][i] = 0;
     }
 }
 
