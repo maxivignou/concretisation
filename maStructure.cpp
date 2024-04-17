@@ -82,7 +82,7 @@ void application_masque(tableau & T, int taille, ligne & L_S, ligne & M, int & s
             }
         }
         M2[mini] = 2;
-        modification_donnees(T, taille, L_S, M1, mini);
+        modifications_donnees(T, taille, L_S, M1, mini);
         application_masque(T, taille, L_S, M1, score_1);
         application_masque(T, taille, L_S, M2, score_2);
         if (score_1 > score_2) {
@@ -91,13 +91,8 @@ void application_masque(tableau & T, int taille, ligne & L_S, ligne & M, int & s
         } else {
             M = M2;
             score = score_2;
+        }
     }
-    /*
-    while (L_S[mini] < 0) {
-        modifications_donnees(T, taille, L_S, M, mini);
-        mini = indice_min(L_S, taille);
-    }
-    */
 }
 
 int somme_tableau(tableau & T, int taille, ligne & M) { // Somme de toutes les valeurs du tableau
