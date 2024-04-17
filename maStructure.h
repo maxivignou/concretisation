@@ -14,11 +14,11 @@ int somme_colonne_ligne(tableau & T, int taille, int no_somme); // Somme des val
 
 void creation_toutes_sommes(tableau & T, int taille, ligne & L_S); // Création de la liste contenant toutes les sommes
 
-int indice_min(ligne & L, int taille); // Récupération de l'indice minimal de la liste
+int indice_min(ligne & L, int taille, ligne & M); // Récupération de l'indice minimal de la liste
 
 void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int no_modification); // Modifications de toutes les données lorsqu'on appliquera un nouveau masque
 
-void application_masque(tableau & T, int taille, ligne & L_S, ligne & M); // Création masque total en modifiant les données
+void application_masque(tableau & T, int taille, ligne & L_S, ligne & M, int & score); // Création masque total en modifiant les données
 
 int somme_tableau(tableau & T, int taille, ligne & M); // Somme de toutes les valeurs du tableau
 
