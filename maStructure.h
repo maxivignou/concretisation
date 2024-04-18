@@ -24,4 +24,10 @@ int somme_tableau(tableau & T, int taille, ligne & M); // Somme de toutes les va
 
 void renvoi_resultat(std::string nom_fichier, ligne & masque, int score, int taille); // Création du fichier qui contient le masque et le score
 
+void ajoute_un(ligne & L,int taille); // Ajouter 1 en binaire à un masque (unités à gauche)
+
+void copie(ligne & LR, ligne & LE, int taille); // Copier une liste LE dans une liste LR
+
+void masque_meilleur(tableau & T, int taille, ligne & M_meilleur, int & S_meilleur); // Résoudre le problème par force brute
+
 void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, int & taille); // Gestion du programme
