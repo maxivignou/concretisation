@@ -1,4 +1,5 @@
 #include "maStructure.h"
+#include <cmath>
 
 void ajoute_un(ligne & L,int taille) {
     int i = 0;
