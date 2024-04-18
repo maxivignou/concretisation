@@ -13,6 +13,8 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
         force_brute(T, taille, M, S_T);
     } else {
         application_masque(T, taille, L_S, M, S_T);
+        for (int i = 0; i < taille; ++i) {
+            if (M[i] == 2) M[i] = 1;
     }
     renvoi_resultat(fic_export,M,S_T,taille);
     for (int i = 0; i < taille; i++) {
