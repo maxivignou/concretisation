@@ -1,4 +1,4 @@
-#include "maStructure.cpp"
+#include "maStructure.h"
 
 int somme_colonne_ligne(tableau & T, int taille, int no_somme) { // Somme des valeurs dans la no_somme ligne et la no_somme colonne
     int Somme = 0;
