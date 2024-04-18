@@ -9,7 +9,11 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
         M[i] = 1;
     }
     int S_T;
-    application_masque(T,taille,L_S,M, S_T);
+    if (taille <= 20) {
+        force_brute(T, taille, M, S_T);
+    } else {
+        application_masque(T, taille, L_S, M, S_T);
+    }
     renvoi_resultat(fic_export,M,S_T,taille);
     for (int i = 0; i < taille; i++) {
         delete[] T[i];
