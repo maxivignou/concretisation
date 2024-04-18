@@ -27,11 +27,14 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
 }
 
 int main() {
-  std::string nom_depart = "bdd.txt",nom_fin = "resultat.txt";
-  tableau T;
-  ligne M;
-  int taille;
-  coeur_programme(nom_depart,nom_fin,T,M,taille);
-  return 0;
+    std::string nom_depart;
+    std::cout << "Saisir le nom du fichier texte dans lequel on trouvera les donnees du tableau (ex : base_donnees.txt) : ";
+    std::cin >> nom_depart;
+    std::string nom_fin = "resultats_" + nom_depart;
+    tableau T;
+    ligne M;
+    int taille;
+    coeur_programme(nom_depart,nom_fin,T,M,taille);
+    return 0;
 }
 
