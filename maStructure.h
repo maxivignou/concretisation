@@ -28,6 +28,6 @@ void ajoute_un(ligne & L,int taille); // Ajouter 1 en binaire à un masque (unit
 
 void copie(ligne & LR, ligne & LE, int taille); // Copier une liste LE dans une liste LR
 
-void masque_meilleur(tableau & T, int taille, ligne & M_meilleur, int & S_meilleur); // Résoudre le problème par force brute
+void force_brute(tableau & T, int taille, ligne & M_meilleur, int & S_meilleur); // Résoudre le problème par force brute
 
 void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, int & taille); // Gestion du programme
