@@ -21,7 +21,9 @@ int indice_min(ligne & L, int taille, ligne & M); // Récupération de l'indice 
 
 void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int no_modification); // Modifications de toutes les données lorsqu'on appliquera un nouveau masque
 
-void application_masque(tableau & T, int taille, ligne & L_S, ligne & M, int & score); // Création masque total en modifiant les données
+void application_masque_reccur(tableau & T, int taille, ligne & L_S, ligne & M, int & score); // Création masque total en modifiant les données
+
+void application_masque(tableau & T, int taille, ligne & L_S, ligne & M); // Création masque plus primitif
 
 int somme_tableau(tableau & T, int taille, ligne & M); // Somme de toutes les valeurs du tableau
 
