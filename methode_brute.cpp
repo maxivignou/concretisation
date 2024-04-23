@@ -1,6 +1,6 @@
 #include "maStructure.h"
 
-void ajoute_un(ligne & L,int taille) {
+void ajoute_un(ligne & masque,int taille) {
     int i = 0;
     while ((i < taille) and (L[i] == 1)) {
         L[i] = 0;
@@ -9,26 +9,26 @@ void ajoute_un(ligne & L,int taille) {
     if (i != taille) L[i] = 1;
 }
 
-void copie(ligne & LR, ligne & LE, int taille) {
+void copie(ligne & masque_recevant, ligne & masque_envoyant, int taille) {
     for (int i = 0; i < taille; ++i) {
-        LR[i] = LE[i];
+        masque_recevant[i] = masque_envoyant[i];
     }
 }
 
-void force_brute(tableau & T, int taille, ligne & M_meilleur, int & S_meilleur) {
-    M_meilleur = new int[taille];
-    ligne M_test = new int[taille];
+void force_brute(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme) {
+    meilleur_masque = new int[taille];
+    ligne masque_test = new int[taille];
     for (int i = 0; i < taille; ++i) {
-        M_meilleur[i] = 0;
-        M_test[i] = 0;
+        meilleur_masque[i] = 0;
+        masque_test[i] = 0;
     }
-    S_meilleur = 0;
+    meilleure_somme = 0;
     for (int i = 0; i < std::pow(2, taille); ++i) {
-        ajoute_un(M_test, taille);
-        int S_test = somme_tableau(T, taille, M_test);
-        if (S_test > S_meilleur) {
-            S_meilleur = S_test;
-            copie(M_meilleur, M_test, taille);
+        ajoute_un(masque_test, taille);
+        int somme_test = somme_tableau(T, taille, masque_test);
+        if (somme_test > meilleure_somme) {
+            meilleure_somme = somme_test;
+            copie(meilleur_masque, masque_test, taille);
         }
     }
 }
