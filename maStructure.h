@@ -30,6 +30,6 @@ void copie(ligne & LR, ligne & LE, int taille); // Copier une liste LE dans une 
 
 void force_brute(tableau & T, int taille, ligne & M_meilleur, int & S_meilleur); // Résoudre le problème par force brute
 
-void maximum_aleatoire(tableau & T, int taille, ligne & M_alea, int & somme_alea, int quantite); // Résoudre le problème par méthode aléatoire
+void maximum_aleatoire(tableau & T, int taille, ligne & M_alea, int & somme_alea); // Résoudre le problème par méthode aléatoire
 
 void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, int & taille); // Gestion du programme
