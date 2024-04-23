@@ -1,0 +1,3 @@
+void maximum_aleatoire() {
+
+}
