@@ -29,12 +29,12 @@ int somme_tableau(tableau & T, int taille, ligne & masque); // Somme de toutes l
 
 void renvoi_resultat(std::string nom_fichier, ligne & masque, int score, int taille); // Création du fichier qui contient le masque et le score
 
-void ajoute_un(ligne & L,int taille); // Ajouter 1 en binaire à un masque (unités à gauche)
+void ajoute_un(ligne & masque,int taille); // Ajouter 1 en binaire à un masque (unités à gauche)
 
-void copie(ligne & LR, ligne & LE, int taille); // Copier une liste LE dans une liste LR
+void copie(ligne & masque_recevant, ligne & masque_envoyant, int taille); // Copier une liste LE dans une liste LR
 
-void force_brute(tableau & T, int taille, ligne & masque_meilleur, int & S_meilleur); // Résoudre le problème par force brute
+void force_brute(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme); // Résoudre le problème par force brute
 
-void maximum_aleatoire(tableau & T, int taille, ligne & masque_alea, int & somme_alea); // Résoudre le problème par méthode aléatoire
+void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme); // Résoudre le problème par méthode aléatoire
 
-void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & masque, int & taille); // Gestion du programme
+void coeur_programme(std::string & fic_import, std::string & fic_export); // Gestion du programme
