@@ -6,42 +6,37 @@ void coeur_programme(std::string & fic_import, std::string & fic_export) { // Ge
     recup_donnees(fic_import,T,taille);
     ligne liste_sommes;
     creation_toutes_sommes(T,taille,liste_sommes);
-    ligne masque = new int[taille];
-    ligne masque_alea = new int[taille];
+    ligne masque_etude = new int[taille];
+    ligne masque_aleatoire = new int[taille];
     for (int i = 0; i < taille; ++i) {
-        M[i] = 1;
-        M_alea[i] = 0;
+        masque_etude[i] = 1;
+        masque_aleatoire[i] = 0;
     }
-    int somme_etude, somme_alea = -1;
+    int somme_etude, somme_aleatoire = -1;
     if (taille <= 25) {
-        force_brute(T, taille, M, somme_etude);
+        force_brute(T, taille, masque_etude, somme_etude);
     } else if (taille <= 40) {
-        application_masque_reccur(T, taille, liste_sommes, M, somme_etude);
-        std::cout << "Fin application masque" << std::endl;
-        maximum_aleatoire(T, taille, M_alea, somme_alea);
+        application_masque_reccur(T, taille, liste_sommes, masque_etude, somme_etude);
         for (int i = 0; i < taille; ++i) {
-            if (M[i] == 2) M[i] = 1;
+            if (masque_etude[i] == 2) masque_etude[i] = 1;
         }
+        maximum_aleatoire(T, taille, masque_aleatoire, somme_aleatoire);
     } else {
-        application_masque(T, taille, liste_sommes, M);
-        somme_etude = somme_tableau(T, taille, M);
-        std::cout << "Fin application masque" << std::endl;
-        maximum_aleatoire(T, taille, M_alea, somme_alea);
-        for (int i = 0; i < taille; ++i) {
-            if (M[i] == 2) M[i] = 1;
-        }
+        application_masque(T, taille, liste_sommes, masque_etude);
+        somme_etude = somme_tableau(T, taille, masque_etude);
+        maximum_aleatoire(T, taille, masque_aleatoire, somme_aleatoire);
     }
-    if (somme_etude > somme_alea) {
-        renvoi_resultat(fic_export,M,somme_etude,taille);
+    if (somme_etude > somme_aleatoire) {
+        renvoi_resultat(fic_export,masque_etude,somme_etude,taille);
     } else {
-        renvoi_resultat(fic_export, M_alea, somme_alea, taille);
+        renvoi_resultat(fic_export, masque_aleatoire, somme_aleatoire, taille);
     }
     for (int i = 0; i < taille; i++) {
         delete[] T[i];
     }
     delete[] T;
-    delete[] M;
-    delete[] M_alea;
+    delete[] masque_etude;
+    delete[] masque_aleatoire;
     delete[] liste_sommes;
 }
 
