@@ -11,7 +11,7 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
         M_alea[i] = 0;
     }
     int somme_etude, somme_alea = -1; //Etre sûr de l'infériorité dans la condition ci-dessous, et éviter
-    if (taille <= 20) {
+    if (taille <= 25) {
         force_brute(T, taille, M, somme_etude);
     } else {
         application_masque(T, taille, L_S, M, somme_etude);
