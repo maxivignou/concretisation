@@ -38,12 +38,11 @@ int somme_tableau(tableau & T, int taille, ligne & M) { // Somme de toutes les v
     return Somme;
 }
 
-void application_masque(tableau & T, int taille, ligne & L_S, ligne & M, int & score) { // Création masque total en modifiant les données
+void application_masque_reccur(tableau & T, int taille, ligne & L_S, ligne & M, int & score) { // Création masque total en modifiant les données
     int mini = indice_min(L_S, taille, M);
     if (mini < 0) {
         score = -1;
-    }
-    else if (L_S[mini] >= 0) {
+    } else if (L_S[mini] >= 0) {
         score = somme_tableau(T, taille, M);
     } else {
         int score_1, score_2;
@@ -60,8 +59,8 @@ void application_masque(tableau & T, int taille, ligne & L_S, ligne & M, int & s
         }
         M2[mini] = 2;
         modifications_donnees(T, taille, L_S1, M1, mini);
-        application_masque(T, taille, L_S1, M1, score_1);
-        application_masque(T, taille, L_S2, M2, score_2);
+        application_masque_reccur(T, taille, L_S1, M1, score_1);
+        application_masque_reccur(T, taille, L_S2, M2, score_2);
         if (score_1 > score_2) {
             M = M1;
             score = score_1;
@@ -69,5 +68,13 @@ void application_masque(tableau & T, int taille, ligne & L_S, ligne & M, int & s
             M = M2;
             score = score_2;
         }
+    }
+}
+
+void application_masque(tableau & T, int taille, ligne & L_S, ligne & M) { // Création masque total en modifiant les données
+    int mini = indice_min(L_S, taille, M);
+    while (L_S[mini] < 0) {
+        modifications_donnees(T, taille, L_S, M, mini);
+        mini = indice_min(L_S, taille, M);
     }
 }
