@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <cmath>
 
 using ligne = int*;
 using tableau = ligne*;
