@@ -13,12 +13,16 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
     int somme_etude, somme_alea = -1; //Etre sûr de l'infériorité dans la condition ci-dessous, et éviter
     if (taille <= 25) {
         force_brute(T, taille, M, somme_etude);
-    } else {
-        application_masque(T, taille, L_S, M, somme_etude);
+    } else if (taille <= 40) {
+        application_masque_reccur(T, taille, L_S, M, somme_etude);
         maximum_aleatoire(T, taille, M_alea, somme_alea);
         for (int i = 0; i < taille; ++i) {
             if (M[i] == 2) M[i] = 1;
         }
+    } else {
+        application_masque(T, taille, L_S, M, somme_etude);
+        somme_etude = somme_tableau(T, taille, M);
+        maximum_aleatoire(T, taille, M_alea, somme_alea);
     }
     if (somme_etude > somme_alea) {
         renvoi_resultat(fic_export,M,somme_etude,taille);
