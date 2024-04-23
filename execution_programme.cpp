@@ -2,8 +2,8 @@
 
 void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, ligne & M_alea, int & taille) { // Gestion du programme
     recup_donnees(fic_import,T,taille);
-    ligne L_S;
-    creation_toutes_sommes(T,taille,L_S);
+    ligne liste_sommes;
+    creation_toutes_sommes(T,taille,liste_sommes);
     M = new int[taille];
     M_alea = new int[taille];
     for (int i = 0; i < taille; ++i) {
@@ -14,14 +14,14 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
     if (taille <= 25) {
         force_brute(T, taille, M, somme_etude);
     } else if (taille <= 40) {
-        application_masque_reccur(T, taille, L_S, M, somme_etude);
+        application_masque_reccur(T, taille, liste_sommes, M, somme_etude);
         std::cout << "Fin application masque" << std::endl;
         maximum_aleatoire(T, taille, M_alea, somme_alea);
         for (int i = 0; i < taille; ++i) {
             if (M[i] == 2) M[i] = 1;
         }
     } else {
-        application_masque(T, taille, L_S, M);
+        application_masque(T, taille, liste_sommes, M);
         somme_etude = somme_tableau(T, taille, M);
         std::cout << "Fin application masque" << std::endl;
         maximum_aleatoire(T, taille, M_alea, somme_alea);
@@ -40,7 +40,7 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
     delete[] T;
     delete[] M;
     delete[] M_alea;
-    delete[] L_S;
+    delete[] liste_sommes;
 }
 
 int main() {
