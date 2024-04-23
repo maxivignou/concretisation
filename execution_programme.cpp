@@ -51,6 +51,6 @@ int main() {
     std::cout << "Saisir le nom du fichier texte dans lequel on trouvera les donnees du tableau (ex : base_donnees.txt) : ";
     std::cin >> nom_depart;
     std::string nom_fin = "resultats_" + nom_depart;
-    coeur_programme(nom_depart,nom_fin,T,M, M_alea,taille);
+    coeur_programme(nom_depart,nom_fin);
     return 0;
 }
