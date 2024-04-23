@@ -10,14 +10,14 @@ int indice_min(ligne & L, int taille, ligne & M) { // Récupération de l'indice
     return i_min;
 }
 
-void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int no_modification) { // Modifications de toutes les données lorsqu'on appliquera un nouveau masque
+void modifications_donnees(tableau & T, int taille, ligne & liste_sommes, ligne & M, int no_modification) { // Modifications de toutes les données lorsqu'on appliquera un nouveau masque
     for (int i = 0; i < taille; ++i) {
         if (M[i] != 0) {
-            L_S[i] -= T[i][no_modification];
+            liste_sommes[i] -= T[i][no_modification];
             if (no_modification != i) {
-                L_S[i] -= T[no_modification][i];
-                L_S[no_modification] -= T[i][no_modification];
-                L_S[no_modification] -= T[no_modification][i];
+                liste_sommes[i] -= T[no_modification][i];
+                liste_sommes[no_modification] -= T[i][no_modification];
+                liste_sommes[no_modification] -= T[no_modification][i];
             }
         }
     }
@@ -38,29 +38,29 @@ int somme_tableau(tableau & T, int taille, ligne & M) { // Somme de toutes les v
     return Somme;
 }
 
-void application_masque_reccur(tableau & T, int taille, ligne & L_S, ligne & M, int & score) { // Création masque total en modifiant les données
-    int mini = indice_min(L_S, taille, M);
+void application_masque_reccur(tableau & T, int taille, ligne & liste_sommes, ligne & M, int & score) { // Création masque total en modifiant les données
+    int mini = indice_min(liste_sommes, taille, M);
     if (mini < 0) {
         score = -1;
-    } else if (L_S[mini] >= 0) {
+    } else if (liste_sommes[mini] >= 0) {
         score = somme_tableau(T, taille, M);
     } else {
         int score_1, score_2;
-        ligne M1, M2, L_S1, L_S2;
+        ligne M1, M2, liste_sommes_1, liste_sommes_2;
         M1 = new int[taille];
         M2 = new int[taille];
-        L_S1 = new int[taille];
-        L_S2 = new int[taille];
+        liste_sommes_1 = new int[taille];
+        liste_sommes_2 = new int[taille];
         for (int i = 0; i < taille; ++i) {
-            L_S1[i] = L_S[i];
-            L_S2[i] = L_S[i];
+            liste_sommes_1[i] = L_S[i];
+            liste_sommes_2[i] = L_S[i];
             M1[i] = M[i];
             M2[i] = M[i];
         }
         M2[mini] = 2;
-        modifications_donnees(T, taille, L_S1, M1, mini);
-        application_masque_reccur(T, taille, L_S1, M1, score_1);
-        application_masque_reccur(T, taille, L_S2, M2, score_2);
+        modifications_donnees(T, taille, liste_sommes_1, M1, mini);
+        application_masque_reccur(T, taille, liste_sommes_1, M1, score_1);
+        application_masque_reccur(T, taille, liste_sommes_2, M2, score_2);
         if (score_1 > score_2) {
             M = M1;
             score = score_1;
@@ -71,10 +71,10 @@ void application_masque_reccur(tableau & T, int taille, ligne & L_S, ligne & M, 
     }
 }
 
-void application_masque(tableau & T, int taille, ligne & L_S, ligne & M) { // Création masque total en modifiant les données
-    int mini = indice_min(L_S, taille, M);
-    while (L_S[mini] < 0) {
-        modifications_donnees(T, taille, L_S, M, mini);
-        mini = indice_min(L_S, taille, M);
+void application_masque(tableau & T, int taille, ligne & liste_sommes, ligne & M) { // Création masque total en modifiant les données
+    int mini = indice_min(liste_sommes, taille, M);
+    while (liste_sommes[mini] < 0) {
+        modifications_donnees(T, taille, liste_sommes, M, mini);
+        mini = indice_min(liste_sommes, taille, M);
     }
 }
