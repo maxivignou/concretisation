@@ -1,14 +1,15 @@
 #include "maStructure.h"
 
 void maximum_aleatoire(tableau & T, int taille, ligne & M_alea, int & somme_alea) {
+    int quantite;
     if (taille < ...) {
-        int quantite = ...;
+        quantite = ...;
     } else if (taille < ...) {
-        int quantite = ...;
+        quantite = ...;
     } else if (taille < ...) {
-        int quantite = ...;
+        quantite = ...;
     } else {
-        int quantite = 0;
+        quantite = 0;
     }
     ligne M_test = new int[taille];
     somme_alea = 0;
