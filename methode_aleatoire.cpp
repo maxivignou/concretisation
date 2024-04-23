@@ -2,12 +2,8 @@
 
 void maximum_aleatoire(tableau & T, int taille, ligne & M_alea, int & somme_alea) {
     int quantite;
-    if (taille < ...) {
-        quantite = ...;
-    } else if (taille < ...) {
-        quantite = ...;
-    } else if (taille < ...) {
-        quantite = ...;
+    if (taille < 1000) {
+        quantite = 2500;
     } else {
         quantite = 0;
     }
