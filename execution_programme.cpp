@@ -33,6 +33,7 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
 }
 
 int main() {
+    srand(time(NULL));
     std::string nom_depart;
     std::cout << "Saisir le nom du fichier texte dans lequel on trouvera les donnees du tableau (ex : base_donnees.txt) : ";
     std::cin >> nom_depart;
