@@ -5,10 +5,12 @@ void coeur_programme(std::string & fic_import, std::string & fic_export, tableau
     ligne L_S;
     creation_toutes_sommes(T,taille,L_S);
     M = new int[taille];
+    M_alea = new int[taille];
     for (int i = 0; i < taille; ++i) {
         M[i] = 1;
+        M_alea[i] = 0;
     }
-    int somme_etude, somme_alea;
+    int somme_etude, somme_alea = -1; //Etre sûr de l'infériorité dans la condition ci-dessous, et éviter
     if (taille <= 20) {
         force_brute(T, taille, M, somme_etude);
     } else {
