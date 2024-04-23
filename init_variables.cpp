@@ -9,9 +9,9 @@ int somme_colonne_ligne(tableau & T, int taille, int no_somme) { // Somme des va
     return Somme;
 }
 
-void creation_toutes_sommes(tableau & T, int taille, ligne & L_S) { // Création de la liste contenant toutes les sommes
-    L_S = new int[taille];
+void creation_toutes_sommes(tableau & T, int taille, ligne & liste_sommes) { // Création de la liste contenant toutes les sommes
+    liste_sommes = new int[taille];
     for (int i = 0; i < taille; i++) {
-        L_S[i] = somme_colonne_ligne(T,taille,i);
+        liste_sommes[i] = somme_colonne_ligne(T,taille,i);
     }
 }
