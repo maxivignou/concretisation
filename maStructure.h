@@ -23,7 +23,7 @@ void modifications_donnees(tableau & T, int taille, ligne & L_S, ligne & M, int 
 
 void application_masque_reccur(tableau & T, int taille, ligne & L_S, ligne & M, int & score); // Création masque total en modifiant les données
 
-void application_masque(tableau & T, int taille, ligne & L_S, ligne & M); // Création masque plus primitif
+void application_masque(tableau & T, int taille, ligne & L_S, ligne & M);
 
 int somme_tableau(tableau & T, int taille, ligne & M); // Somme de toutes les valeurs du tableau
 
