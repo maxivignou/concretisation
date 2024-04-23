@@ -5,7 +5,7 @@ totalCompilation :
 	g++ -Wall -c methode_brute.cpp -o methodeBrute.o;
 	g++ -Wall -c methode_optimisee.cpp -o methodeOptimisee.o;
 	g++ -Wall -c methode_aleatoire.cpp -o methodeAleatoire.o;
-	g++ gestionFichiers.o initVariables.o methodeOptimisee.o methodeBrute.o executionProgramme.o methodeAleatoire.o -o LaGrilleMasquee.out;
+	g++ gestionFichiers.o initVariables.o methodeOptimisee.o methodeBrute.o methodeAleatoire.o executionProgramme.o -o LaGrilleMasquee.out;
 creationExecutable :
 	g++ gestionFichiers.o initVariables.o methodeOptimisee.o methodeBrute.o executionProgramme.o -o LaGrilleMasquee.out;
 executionProgramme :
