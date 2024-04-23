@@ -1,11 +1,13 @@
 #include "maStructure.h"
 
-void coeur_programme(std::string & fic_import, std::string & fic_export, tableau & T, ligne & M, ligne & M_alea, int & taille) { // Gestion du programme
+void coeur_programme(std::string & fic_import, std::string & fic_export) { // Gestion du programme
+    tableau T;
+    int taille;
     recup_donnees(fic_import,T,taille);
     ligne liste_sommes;
     creation_toutes_sommes(T,taille,liste_sommes);
-    M = new int[taille];
-    M_alea = new int[taille];
+    ligne masque = new int[taille];
+    ligne masque_alea = new int[taille];
     for (int i = 0; i < taille; ++i) {
         M[i] = 1;
         M_alea[i] = 0;
@@ -49,9 +51,6 @@ int main() {
     std::cout << "Saisir le nom du fichier texte dans lequel on trouvera les donnees du tableau (ex : base_donnees.txt) : ";
     std::cin >> nom_depart;
     std::string nom_fin = "resultats_" + nom_depart;
-    tableau T;
-    ligne M, M_alea;
-    int taille;
     coeur_programme(nom_depart,nom_fin,T,M, M_alea,taille);
     return 0;
 }
