@@ -9,6 +9,7 @@
 
 using ligne = int*;
 using tableau = ligne*;
+using c = std::chrono;
 
 void init_tableau(tableau & T, int taille); // Initialisation du tableau avec des valeurs nulles
 
