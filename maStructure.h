@@ -37,6 +37,6 @@ void copie(ligne & masque_recevant, ligne & masque_envoyant, int taille); // Cop
 
 void force_brute(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme); // Résoudre le problème par force brute
 
-void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme, auto heure_depart); // Résoudre le problème par méthode aléatoire
+void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme, heure heure_depart); // Résoudre le problème par méthode aléatoire
 
 void coeur_programme(std::string & fic_import, std::string & fic_export); // Gestion du programme
