@@ -43,7 +43,7 @@ void application_masque_reccur(tableau & T, int taille, ligne & liste_sommes, li
     if (indice_mini < 0) {
         score = -1;
     } else if (liste_sommes[indice_mini] >= 0) {
-        score = somme_tableau(T, taille, M);
+        score = somme_tableau(T, taille, masque);
     } else {
         int score_1, score_2;
         ligne masque_1, masque_2, liste_sommes_1, liste_sommes_2;
