@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
+#include <chrono>
 
 using ligne = int*;
 using tableau = ligne*;
