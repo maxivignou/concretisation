@@ -16,5 +16,5 @@ void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & m
         }
         heure_fin = std::chrono::system_clock::now();
         difference_temps = heure_fin - heure_depart;
-    } while (difference_temps.count() < 50);
+    } while (difference_temps.count() < 58);
 }
