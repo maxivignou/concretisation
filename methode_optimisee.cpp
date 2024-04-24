@@ -39,8 +39,8 @@ int somme_tableau(tableau & T, int taille, ligne & masque) { // Somme de toutes 
 }
 
 void application_masque_reccur(tableau & T, int taille, ligne & liste_sommes, ligne & masque, int & score) { // Création masque total en modifiant les données
-    int indice_mini = indice_min(liste_sommes, taille, M);
-    if (mini < 0) {
+    int indice_mini = indice_min(liste_sommes, taille, masque);
+    if (indice_mini < 0) {
         score = -1;
     } else if (liste_sommes[indice_mini] >= 0) {
         score = somme_tableau(T, taille, M);
