@@ -9,7 +9,7 @@ void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & m
         for (int j = 0; j < taille; ++j) {
             masque_test[j] = rand()%2;
         }
-        int somme_test = somme_tableau(T, taille, M_test);
+        int somme_test = somme_tableau(T, taille, masque_test);
         if (somme_test > meilleure_somme) {
             copie(meilleur_masque, masque_test, taille);
             meilleure_somme = somme_test;
