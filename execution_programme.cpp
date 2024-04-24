@@ -1,6 +1,7 @@
 #include "maStructure.h"
 
 void coeur_programme(std::string & fic_import, std::string & fic_export) { // Gestion du programme
+    auto heure_depart = std::chrono::system_clock::now();
     tableau T;
     int taille;
     recup_donnees(fic_import,T,taille);
@@ -20,11 +21,11 @@ void coeur_programme(std::string & fic_import, std::string & fic_export) { // Ge
         for (int i = 0; i < taille; ++i) {
             if (masque_etude[i] == 2) masque_etude[i] = 1;
         }
-        maximum_aleatoire(T, taille, masque_aleatoire, somme_aleatoire);
+        maximum_aleatoire(T, taille, masque_aleatoire, somme_aleatoire, heure_depart);
     } else {
         application_masque(T, taille, liste_sommes, masque_etude);
         somme_etude = somme_tableau(T, taille, masque_etude);
-        maximum_aleatoire(T, taille, masque_aleatoire, somme_aleatoire);
+        maximum_aleatoire(T, taille, masque_aleatoire, somme_aleatoire, heure_depart);
     }
     if (somme_etude > somme_aleatoire) {
         renvoi_resultat(fic_export,masque_etude,somme_etude,taille);
