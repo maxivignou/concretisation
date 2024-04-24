@@ -1,9 +1,9 @@
 #include "maStructure.h"
 
-void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme, auto heure_depart) {
+void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme, heure heure_depart) {
     ligne masque_test = new int[taille];
     meilleure_somme = 0;
-    auto heure_fin = std::chrono::system_clock::now();
+    heure heure_fin = std::chrono::system_clock::now();
     std::chrono::duration<double> difference_temps;
     do {
         for (int j = 0; j < taille; ++j) {
