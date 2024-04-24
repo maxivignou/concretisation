@@ -1,15 +1,11 @@
 #include "maStructure.h"
 
-void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme) {
-    int quantite;
-    if (taille < 1000) {
-        quantite = 2500;
-    } else {
-        quantite = 0;
-    }
+void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme, auto heure_depart) {
     ligne masque_test = new int[taille];
     meilleure_somme = 0;
-    for (int i = 0; i < quantite; ++i) {
+    auto heure_fin;
+    std::chrono::duration<double> difference_temps
+    do {
         for (int j = 0; j < taille; ++j) {
             masque_test[j] = rand()%2;
         }
@@ -18,5 +14,7 @@ void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & m
             copie(meilleur_masque, masque_test, taille);
             meilleure_somme = somme_test;
         }
-    }
+        heure_fin = std::chrono::system_clock::now();
+        difference_temps = heure_fin - heure_depart;
+    } while (difference_temps.count() < 50);
 }
