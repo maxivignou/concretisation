@@ -2,11 +2,11 @@
 
 void ajoute_un(ligne & masque,int taille) {
     int i = 0;
-    while ((i < taille) and (L[i] == 1)) {
-        L[i] = 0;
+    while ((i < taille) and (masque[i] == 1)) {
+        masque[i] = 0;
         i += 1;
     }
-    if (i != taille) L[i] = 1;
+    if (i != taille) masque[i] = 1;
 }
 
 void copie(ligne & masque_recevant, ligne & masque_envoyant, int taille) {
