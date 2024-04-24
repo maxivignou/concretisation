@@ -4,7 +4,7 @@ void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & m
     ligne masque_test = new int[taille];
     meilleure_somme = 0;
     auto heure_fin;
-    std::chrono::duration<double> difference_temps
+    std::chrono::duration<double> difference_temps;
     do {
         for (int j = 0; j < taille; ++j) {
             masque_test[j] = rand()%2;
