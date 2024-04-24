@@ -16,9 +16,28 @@ Cependant, il est important de respecter certaines règles :
 8. creation_bdd.cpp : Fichier déconnecté des autres, permettant de créer un fichier contenant les données d'un tableau
 9. Makefile : Fichier de compilation
 ## Méthode d'installation et d'exécution pour Linux
-Première étape : Télécharger le dossier ZIP
-Deuxième étape : Extraire les fichiers du dossier ZIP
-Troisième étape : Clic droit dans le dossier, puis **Ouvrir dans un terminal**.
-Quatrième étape : Entrez dans le terminal la commande *make* et exécutez.
-Cinquième étape : Récupérez sur le site web un fichier texte contenant les données du tableau, où créez votre fichier selon les conditions décrites ci-dessous, et déplacez le fichier texte dans le dossier contenant les autres fichiers.
-Sixième étape : Entrez dans le terminal la commande *./LaGrilleMasquee.out **nom_fichier_texte_contenant_les_donnees_du_tableau** **nom_fichier_texte_contenant_les_resultats_(facultatif)*** et exécutez.
+### Première étape :
+Télécharger le dossier ZIP
+### Deuxième étape :
+Extraire les fichiers du dossier ZIP
+### Troisième étape :
+Clic droit dans le dossier, puis **Ouvrir dans un terminal**.
+### Quatrième étape :
+Entrez dans le terminal la commande *make* et exécutez.
+### Cinquième étape :
+Récupérez sur le site web un fichier texte contenant les données du tableau, où créez votre fichier selon les conditions décrites ci-dessous, et déplacez le fichier texte dans le dossier contenant les autres fichiers.
+### Sixième étape :
+Entrez dans le terminal la commande *./LaGrilleMasquee.out **nom_fichier_texte_contenant_les_donnees_du_tableau** **nom_fichier_texte_contenant_les_resultats_(facultatif)*** et exécutez.
+## Méthode d'installation et d'exécution pour un autre système que Linux
+Pour l'instant, cette application n'est pas disponible hors de Linux.
+## Création du fichier d'entrée contenant les données du tableau
+### Première ligne :
+La première ligne contient 2 nombres :
+* Le premier nombre est la taille de la matrice carrée
+* La deuxième ligne est le nombre de données sur les lignes suivantes
+## Lignes suivantes :
+Les lignes suivantes contiennent 3 nombres :
+* Le premier nombre est le numéro de la ligne (compris entre 1 et la taille du tableau tous deux inclus)
+* Le deuxième nombre est le numéro de la colonne (compris entre 1 et la taille du tableau tous deux inclus)
+* Le troisième nombre est la valeur présente dans le tableau à la ligne et la colonne indiquée.
+Afin d'éviter une surcharge du fichier, les valeurs nulles ne seront pas indiquées dans le fichier.
