@@ -57,7 +57,7 @@ void masque_modifie_aleatoire(tableau & T, ligne & meilleur_masque, int taille, 
     heure heure_fin = std::chrono::system_clock::now();
     std::chrono::duration<double> difference_temps;
     int change;
-    int faits = 0
+    int faits = 0;
     do {
         for (int i = 0; i < taille; ++i) {
             change = rand()%4;
