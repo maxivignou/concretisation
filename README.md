@@ -35,7 +35,7 @@ Pour l'instant, cette application n'est pas disponible hors de Linux.
 La première ligne contient 2 nombres :
 * Le premier nombre est la taille de la matrice carrée
 * La deuxième ligne est le nombre de données sur les lignes suivantes
-## Lignes suivantes :
+### Lignes suivantes :
 Les lignes suivantes contiennent 3 nombres :
 * Le premier nombre est le numéro de la ligne (compris entre 1 et la taille du tableau tous deux inclus)
 * Le deuxième nombre est le numéro de la colonne (compris entre 1 et la taille du tableau tous deux inclus)
