@@ -86,12 +86,13 @@ void gestion_regroupement(tableau & T, int & taille, ligne & masque, int & somme
     }
     tableau T_petit;
     regroupe(T, taille, T_petit, coef);
-    ligne masque_petit = new int[taille/coef];
-    if (taille/coef > 25) {
-        gestion_regroupement(T_petit, taille/coef, masque_petit);
+    int taille_petit = taille/coef;
+    ligne masque_petit = new int[taille_petit];
+    if (taille_petit > 25) {
+        gestion_regroupement(T_petit, taille_petit, masque_petit);
     } else {
-        force_brute(T_petit, taille/coef, masque_petit, somme);
+        force_brute(T_petit, taille_petit, masque_petit, somme);
     }
-    extension_masque(masque_petit, taille/coef, masque, coef);
+    extension_masque(masque_petit, taille_petit, masque, coef);
     if (ajout) taille -= 1;
 }
