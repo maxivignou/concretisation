@@ -47,7 +47,7 @@ int diviseur(int n); // Retrouver un diviseur parmi 2, 3, 5 ou 0 s'il n'en a pas
 
 void extension_masque(ligne & masque, int taille, ligne & masque_grand, int coef); // Retrouver un masque de la bonne taille grâce au masque du tableau regroupé
 
-void masque_modifie_aleatoire(tableau & T, ligne & meilleur_masque, int taille, int & meilleure_somme, heure heure_depart, int quantite = 0); // Modifier les bits aléatoirement à 25% de chance
+void masque_modifie_aleatoire(tableau & T, ligne & meilleur_masque, int taille, int & meilleure_somme, heure heure_depart, int quantite); // Modifier les bits aléatoirement à 25% de chance
 
 void gestion_regroupement(tableau & T, int & taille, ligne & meilleur_masque, int & meilleure_somme, heure heure_depart); // Trouver le meilleur
 
