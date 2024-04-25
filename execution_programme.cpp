@@ -46,7 +46,7 @@ void coeur_programme(std::string & fic_import, std::string & fic_export) { // Ge
 int main(int argc, char* argv[]) {
     srand(time(NULL));
     if (argc == 1) {
-        std::cout << "Saisir une commande de la forme './LaGrilleMasquee.out nom_fichier_donnees_tableau.txt nom_fichier_resultats.txt'. Sachez que le 3ème paramètre est facultatif.";
+        std::cout << "Saisir une commande de la forme './LaGrilleMasquee.out nom_fichier_donnees_tableau.txt nom_fichier_resultats.txt'. Sachez que le 3ème paramètre est facultatif." << std::endl;
     } else {
         std::string nom_depart = argv[1];
         std::string nom_fin;
