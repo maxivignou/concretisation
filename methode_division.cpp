@@ -52,6 +52,30 @@ void ajout_ligne_colonne(tableau & T, int & taille) {
     taille += 1;
 }
 
+void masque_modifie_aleatoire(tableau & T, ligne & meilleur_masque, int taille, int & meilleure_somme, heure heure_depart) {
+    ligne masque_test = new int[taille];
+    heure heure_fin = std::chrono::system_clock::now();
+    std::chrono::duration<double> difference_temps;
+    int change;
+    do {
+        for (int i = 0; i < taille; ++i) {
+            change = rand()%4;
+            if (change == 0) {
+                masque_test[i] = 1 - meilleur_masque[i];
+            } else {
+                masque_test[i] = meilleur_masque[i];
+            }
+        }
+        int somme_test = somme_tableau(T, taille, masque_test);
+        if (somme_test > meilleure_somme) {
+            copie(meilleur_masque, masque_test, taille);
+            meilleure_somme = somme_test;
+        }
+        heure_fin = std::chrono::system_clock::now();
+        difference_temps = heure_fin - heure_depart;
+    } while (difference_temps.count() < 58);
+}
+
 void gestion_regroupement(tableau & T, int & taille, ligne & masque, int & somme) {
     bool ajout = false;
     int coef = diviseur(taille);
@@ -70,5 +94,4 @@ void gestion_regroupement(tableau & T, int & taille, ligne & masque, int & somme
     }
     extension_masque(masque_petit, taille/coef, masque, coef);
     if (ajout) taille -= 1;
-    // Force brute autour de ce masque...
 }
