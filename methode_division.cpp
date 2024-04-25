@@ -15,6 +15,22 @@ void regroupe(tableau & T, int taille, tableau & T_petit, int coef) {
     }   
 }
 
+int diviseur(int n) {
+    if(n%2 == 0) return 2;
+    else if(n%3 == 0) return 3;
+    else if(n%5 == 0) return 5;
+    else return 0;
+}
+
+void extension_masque(ligne & masque, int taille, ligne & masque_grand, int coef) {
+    masque_grand = new int[taille*coef];
+    for(int i = 0; i < taille) {
+        for(int j = 0; j < coef; j++) {
+            masque_grand[i*coef+j] = masque[i];
+        }
+    }
+}
+
 void ajout_ligne_colonne(tableau & T, int & taille) {
     tableau T_grand = new ligne[taille + 1];
     for (int i = 0; i < taille + 1; ++i) {
