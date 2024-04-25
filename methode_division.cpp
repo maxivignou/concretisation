@@ -52,7 +52,7 @@ void ajout_ligne_colonne(tableau & T, int & taille) {
     taille += 1;
 }
 
-void masque_modifie_aleatoire(tableau & T, ligne & meilleur_masque, int taille, int & meilleure_somme, heure heure_depart, int quantite = 0) {
+void masque_modifie_aleatoire(tableau & T, ligne & meilleur_masque, int taille, int & meilleure_somme, heure heure_depart, int quantite) {
     ligne masque_test = new int[taille];
     heure heure_fin = std::chrono::system_clock::now();
     std::chrono::duration<double> difference_temps;
