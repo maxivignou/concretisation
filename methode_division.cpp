@@ -89,7 +89,7 @@ void gestion_regroupement(tableau & T, int & taille, ligne & masque, int & somme
     int taille_petit = taille/coef;
     ligne masque_petit = new int[taille_petit];
     if (taille_petit > 25) {
-        gestion_regroupement(T_petit, taille_petit, masque_petit);
+        gestion_regroupement(T_petit, taille_petit, masque_petit, somme);
     } else {
         force_brute(T_petit, taille_petit, masque_petit, somme);
     }
