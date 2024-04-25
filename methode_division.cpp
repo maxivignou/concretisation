@@ -96,6 +96,6 @@ void gestion_regroupement(tableau & T, int & taille, ligne & masque, int & somme
         force_brute(T_petit, taille_petit, masque_petit, somme);
     }
     extension_masque(masque_petit, taille_petit, masque, coef);
-    masque_modifie_aleatoire(T, masque, taille, somme, heure_depart, 10000);
+    masque_modifie_aleatoire(T, masque, taille, somme, heure_depart, 1000000);
     if (ajout) taille -= 1;
 }
