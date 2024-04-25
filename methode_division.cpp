@@ -75,7 +75,7 @@ void masque_modifie_aleatoire(tableau & T, ligne & meilleur_masque, int taille, 
         heure_fin = std::chrono::system_clock::now();
         difference_temps = heure_fin - heure_depart;
         faits += 1;
-    } while (difference_temps.count() < 58 and (quantite > faits or quantite = 0));
+    } while (difference_temps.count() < 58 and ((quantite > faits) or (quantite = 0)));
 }
 
 void gestion_regroupement(tableau & T, int & taille, ligne & masque, int & somme, heure heure_depart) {
@@ -91,7 +91,7 @@ void gestion_regroupement(tableau & T, int & taille, ligne & masque, int & somme
     int taille_petit = taille/coef;
     ligne masque_petit = new int[taille_petit];
     if (taille_petit > 25) {
-        gestion_regroupement(T_petit, taille_petit, masque_petit, somme);
+        gestion_regroupement(T_petit, taille_petit, masque_petit, somme, heure_depart);
     } else {
         force_brute(T_petit, taille_petit, masque_petit, somme);
     }
