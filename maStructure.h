@@ -39,4 +39,6 @@ void force_brute(tableau & T, int taille, ligne & meilleur_masque, int & meilleu
 
 void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & meilleure_somme, heure heure_depart); // Résoudre le problème par méthode aléatoire
 
+void ajout_ligne_colonne(tableau & T, int & taille); // Ajouter une ligne et une colonne de 0 à la fin de la table
+
 void coeur_programme(std::string & fic_import, std::string & fic_export); // Gestion du programme
