@@ -43,12 +43,18 @@ void coeur_programme(std::string & fic_import, std::string & fic_export) { // Ge
     delete[] liste_sommes;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
     srand(time(NULL));
-    std::string nom_depart;
-    std::cout << "Saisir le nom du fichier texte dans lequel on trouvera les donnees du tableau (ex : base_donnees.txt) : ";
-    std::cin >> nom_depart;
-    std::string nom_fin = "resultats_" + nom_depart;
-    coeur_programme(nom_depart,nom_fin);
+    if (argc == 1) {
+        std::cout << "Saisir une commande de la forme './LaGrilleMasquee.out nom_fichier_donnees_tableau.txt nom_fichier_resultats.txt'. Sachez que le 3ème paramètre est facultatif."
+    } else {
+        std::string nom_depart = argv[1];
+        if (argc == 2) {
+            std::string nom_fin = "resultats_" + nom_depart;
+        } else {
+            std::string nom_fin = argv[2];
+        }
+        coeur_programme(nom_depart,nom_fin);
+    }
     return 0;
 }
