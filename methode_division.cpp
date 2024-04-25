@@ -24,7 +24,7 @@ int diviseur(int n) {
 
 void extension_masque(ligne & masque, int taille, ligne & masque_grand, int coef) {
     masque_grand = new int[taille*coef];
-    for(int i = 0; i < taille) {
+    for(int i = 0; i < taille; i++) {
         for(int j = 0; j < coef; j++) {
             masque_grand[i*coef+j] = masque[i];
         }
@@ -86,7 +86,7 @@ void gestion_regroupement(tableau & T, int & taille, ligne & masque, int & somme
     }
     tableau T_petit;
     regroupe(T, taille, T_petit, coef);
-    masque_petit = new int[taille/coef];
+    ligne masque_petit = new int[taille/coef];
     if (taille/coef > 25) {
         gestion_regroupement(T_petit, taille/coef, masque_petit);
     } else {
