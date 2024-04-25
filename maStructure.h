@@ -41,4 +41,6 @@ void maximum_aleatoire(tableau & T, int taille, ligne & meilleur_masque, int & m
 
 void ajout_ligne_colonne(tableau & T, int & taille); // Ajouter une ligne et une colonne de 0 à la fin de la table
 
+void regroupe(tableau & T, int taille, tableau & T_petit, int coef); // Regrouper les cases du tableau pour diminuer la taille
+
 void coeur_programme(std::string & fic_import, std::string & fic_export); // Gestion du programme
