@@ -41,3 +41,14 @@ Les lignes suivantes contiennent 3 nombres :
 * Le deuxième nombre est le numéro de la colonne (compris entre 1 et la taille du tableau tous deux inclus)
 * Le troisième nombre est la valeur présente dans le tableau à la ligne et la colonne indiquée.
 Afin d'éviter une surcharge du fichier, les valeurs nulles ne seront pas indiquées dans le fichier.
+### Générateur aléatoire :
+#### Première étape :
+Clic droit dans le dossier, puis **Ouvrir dans un terminal**.
+#### Deuxième étape :
+Entrez dans le terminal la commande *g++ creation_bdd.cpp -o generateur.out* et exécutez.
+#### Troisième étape :
+Entrez dans le terminal la commande *./generateur.out* et exécutez.
+#### Quatrième étape :
+Entrez le nom que vous souhaitez donner au fichier texte, **sans** l'extension.
+#### Cinquième étape :
+Entrez la taille du tableau que vous souhaitez.
