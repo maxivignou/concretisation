@@ -26,8 +26,9 @@ void coeur_programme(std::string & fic_import, std::string & fic_export) { // Ge
             application_masque(T, taille, liste_sommes, masque_etude);
             somme_etude = somme_tableau(T, taille, masque_etude);
         }
-        gestion_regroupement(T, taille, masque_aleatoire, somme_aleatoire, heure_depart);
-        masque_modifie_aleatoire(T, masque_aleatoire, taille, somme_aleatoire, heure_depart, 0);
+        masque_modifie_aleatoire(T, masque_etude, taille, somme_etude, heure_depart, 0);
+        //gestion_regroupement(T, taille, masque_aleatoire, somme_aleatoire, heure_depart);
+        //masque_modifie_aleatoire(T, masque_aleatoire, taille, somme_aleatoire, heure_depart, 0);
     }
     if (somme_etude > somme_aleatoire) {
         renvoi_resultat(fic_export,masque_etude,somme_etude,taille);
