@@ -60,8 +60,8 @@ void masque_modifie_aleatoire(tableau & T, ligne & meilleur_masque, int taille, 
     int faits = 0;
     do {
         for (int i = 0; i < taille; ++i) {
-            change = rand()%4;
-            if (change == 0) {
+            change = rand()%taille;
+            if (change < 2) {
                 masque_test[i] = 1 - meilleur_masque[i];
             } else {
                 masque_test[i] = meilleur_masque[i];
