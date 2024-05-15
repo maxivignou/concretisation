@@ -1,46 +1,53 @@
-#include "maStructure.h"
+#include "prototypes.h"
 
-void coeur_programme(std::string & fic_import, std::string & fic_export) { // Gestion du programme
+void coeur_programme(std::string & fic_import, std::string & fic_export) {
+    /*
+     Objectif :
+        On veut appeler toutes les fonctions pour faire fonctionner le programme.
+     Paramètres :
+        fic_import : std::string -> Ce paramètre contient le nom du fichier contenant les données.
+        fic_export : std::string -> Ce paramètre contient le nom du fichier contenant les résultats.
+     Retour :
+        Pas de retour.
+     */
+    
     auto heure_depart = std::chrono::system_clock::now();
     tableau T;
-    int taille;
+    int taille, somme;
     recup_donnees(fic_import,T,taille);
     ligne liste_sommes;
     creation_toutes_sommes(T,taille,liste_sommes);
-    ligne masque_etude = new int[taille];
-    ligne masque_aleatoire = new int[taille];
-    for (int i = 0; i < taille; ++i) {
-        masque_etude[i] = 1;
-        masque_aleatoire[i] = 0;
+    ligne masque = new int[taille];
+    
+    for (int parcours = 0; parcours < taille; ++parcours) {
+        masque[parcours] = 1;
     }
-    int somme_etude, somme_aleatoire = -1;
+    
     if (taille <= 25) {
-        force_brute(T, taille, masque_etude, somme_etude);
+        recherche_masque_brute(T, taille, masque, somme);
     } else {
         if (taille <= 40) {
-            application_masque_reccur(T, taille, liste_sommes, masque_etude, somme_etude);
+            recherche_masque_performance(T, taille, liste_sommes, masque, somme);
             for (int i = 0; i < taille; ++i) {
-                if (masque_etude[i] == 2) masque_etude[i] = 1;
+                if (masque[i] == 2) masque[i] = 1;
             }
         } else {
-            application_masque(T, taille, liste_sommes, masque_etude);
-            somme_etude = somme_tableau(T, taille, masque_etude);
+            recherche_masque_efficacite(T, taille, liste_sommes, masque);
+            somme = somme_tableau(T, taille, masque);
         }
-        masque_modifie_aleatoire(T, masque_etude, taille, somme_etude, heure_depart, 0);
+        masque_modifie_aleatoire(T, masque, taille, somme, heure_depart, 0);
         //gestion_regroupement(T, taille, masque_aleatoire, somme_aleatoire, heure_depart);
         //masque_modifie_aleatoire(T, masque_aleatoire, taille, somme_aleatoire, heure_depart, 0);
     }
-    if (somme_etude > somme_aleatoire) {
-        renvoi_resultat(fic_export,masque_etude,somme_etude,taille);
-    } else {
-        renvoi_resultat(fic_export, masque_aleatoire, somme_aleatoire, taille);
-    }
+    
+    renvoi_resultat(fic_export, masque, somme, taille);
+    
     for (int i = 0; i < taille; i++) {
         delete[] T[i];
     }
+    
     delete[] T;
-    delete[] masque_etude;
-    delete[] masque_aleatoire;
+    delete[] masque;
     delete[] liste_sommes;
 }
 
