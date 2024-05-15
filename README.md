@@ -6,15 +6,14 @@ Cependant, il est important de respecter certaines règles :
 * On ne peut pas cacher une case seule, il faut cacher toute une ligne.
 * Lorsque l'on cache une ligne, on doit cacher la colonne associée. Par exemple, si l'on cache la première ligne, il faut cacher la première colonene.
 ## Liste des fichiers
-1. maStructure.h : Fichier contenant les prototypes de toutes les fonctions
-2. execution_programme.cpp : Fichier contenant les fonctions permettant d'exécuter le programme
+1. prototypes.h : Fichier contenant les prototypes de toutes les fonctions
+2. gestion_fonctions.cpp : Fichier contenant les fonctions permettant d'exécuter le programme
 3. gestion_fichiers.cpp : Fichier contenant les fonctions d'importation du tableau et d'exportation du masque
-4. init_variables.cpp : Fichier contenant les fonctions permettant d'obtenir les sommes ligne-colonne du tableau
+4. methode_somme_minimale.cpp : Fichier contenant les fonctions permettant d'obtenir les sommes ligne-colonne du tableau
 5. methode_brute.cpp : Fichier contenant les fonctions permettant d'obtenir le meilleur résultat par force brute
-6. methode_optimisee.cpp : Fichier contenant les fonctions permettant d'obtenir un résultat assez proche du meilleur très rapidement
-7. methode_aleatoire.cpp : Fichier contenant les fonctions permettant d'obtenir un résultat de manière totalement aléatoire
-8. creation_bdd.cpp : Fichier déconnecté des autres, permettant de créer un fichier contenant les données d'un tableau
-9. Makefile : Fichier de compilation
+6. methode_diviser_regner.cpp : Fichier contenant les fonctions permettant d'obtenir un résultat assez proche du meilleur très rapidement
+7. creation_bdd.cpp : Fichier déconnecté des autres, permettant de créer un fichier contenant les données d'un tableau
+8. Makefile : Fichier de compilation
 ## Méthode d'installation et d'exécution pour Linux
 ### Première étape :
 Télécharger le dossier ZIP
