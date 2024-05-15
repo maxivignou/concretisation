@@ -1,24 +1,22 @@
 totalCompilation :
-	g++ -Wall -c execution_programme.cpp -o executionProgramme.o;
+	g++ -Wall -c gestion_fonctions.cpp -o gestionFonctions.o;
 	g++ -Wall -c gestion_fichiers.cpp -o gestionFichiers.o;
-	g++ -Wall -c init_variables.cpp -o initVariables.o;
+	g++ -Wall -c calculs_sommes.cpp -o calculsSommes.o;
 	g++ -Wall -c methode_brute.cpp -o methodeBrute.o;
-	g++ -Wall -c methode_optimisee.cpp -o methodeOptimisee.o;
-	g++ -Wall -c methode_division.cpp -o methodeDivision.o;
-	g++ gestionFichiers.o initVariables.o methodeOptimisee.o methodeBrute.o methodeDivision.o executionProgramme.o -o LaGrilleMasquee.out;
-creationExecutable :
-	g++ gestionFichiers.o initVariables.o methodeOptimisee.o methodeBrute.o executionProgramme.o -o LaGrilleMasquee.out;
-executionProgramme :
-	g++ -Wall -c execution_programme.cpp -o executionProgramme.o
-gestionFichiers :
-	g++ -Wall -c gestion_fichiers.cpp -o gestionFichiers.o
-initVariables :
-	g++ -Wall -c init_variables.cpp -o initVariables.o
-methodeDivision :
-	g++ -Wall -c methode_division.cpp -o methodeDivision.o
-methodeBrute :
-	g++ -Wall -c methode_brute.cpp -o methodeBrute.o
-methodeOptimisee :
-	g++ -Wall -c methode_optimisee.cpp -o methodeOptimisee.o
+	g++ -Wall -c methode_somme_minimale.cpp -o methodeSommeMinimale.o;
+	g++ -Wall -c methode_diviser_regner.cpp -o methodeDiviserRegner.o;
+	g++ gestionFichiers.o calculsSommes.o methodeSommeMinimale.o methodeBrute.o methodeDiviserRegner.o gestionFonctions.o -o LaGrilleMasquee.out;
+gestion_fonctions.cpp :
+	g++ -Wall -c gestion_fonctions.cpp -o gestionFonctions.o;
+gestion_fichiers.cpp :
+	g++ -Wall -c gestion_fichiers.cpp -o gestionFichiers.o;
+calculs_sommes.cpp :
+	g++ -Wall -c calculs_sommes.cpp -o calculsSommes.o;
+methode_brute.cpp :
+	g++ -Wall -c methode_brute.cpp -o methodeBrute.o;
+methode_somme_minimale.cpp :
+	g++ -Wall -c methode_somme_minimale.cpp -o methodeSommeMinimale.o;
+methode_diviser_regner.cpp :
+	g++ -Wall -c methode_diviser_regner.cpp -o methodeDiviserRegner.o;
 clean :
-	rm -f executionProgramme.o gestionFichiers.o initVariables.o methodeBrute.o methodeDivision.o methodeOptimisee.o LaGrilleMasquee.out
+	rm -f gestionFichiers.o calculsSommes.o methodeSommeMinimale.o methodeBrute.o methodeDiviserRegner.o gestionFonctions.o LaGrilleMasquee.out;
